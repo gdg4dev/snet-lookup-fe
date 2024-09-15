@@ -1,25 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Loading from "./Loading";
+import Form from "./components/Form";
+import Results from "./components/Results";
 
-function App() {
+const App = () => {
+  const [loadingComplete, setLoadingComplete] = useState(false);
+  const [showResults, setShowResults] = useState(false);
+  const [results, setResults] = useState([]);
+  const [status, setStatus] = useState("idle");
+
+  const handleLoadComplete = () => {
+    setLoadingComplete(true);
+  };
+
+  const handleFormSubmit = async (formData) => {
+    setShowResults(true);
+    setStatus("fetching");
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    const mockResults = [
+      {
+        name: "D. S.",
+        phone: "abc@gmail.com",
+        street: "Jhghghg",
+        city: "Fgffgfgh",
+        state: "AZ",
+        zip: "85281",
+        age: "27",
+        birthday: "March 1997",
+      },
+      // Add more mock results if needed
+    ];
+    setResults(mockResults);
+    setStatus("fetched");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main_container">
+      {!loadingComplete ? (
+        <Loading onLoadComplete={handleLoadComplete} />
+      ) : showResults ? (
+        <Results results={results} status={status} />
+      ) : (
+        <Form onSubmit={handleFormSubmit} />
+      )}
     </div>
   );
-}
+};
 
 export default App;
