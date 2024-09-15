@@ -1,6 +1,5 @@
 import React from "react";
 import "./Results.css";
-
 const Results = ({ results, status }) => {
   return (
     <div className="results-container">
@@ -19,22 +18,42 @@ const Results = ({ results, status }) => {
           {results.map((result, index) => (
             <div key={index} className="result-card">
               <h3>{result.name}</h3>
-              <p>
-                <strong>Phone:</strong> {result.phone}
-              </p>
-              <p>
-                <strong>Email:</strong> {result.email}
-              </p>
-              <p>
-                <strong>Address:</strong> {result.street}, {result.city},{" "}
-                {result.state} {result.zip}
-              </p>
-              <p>
-                <strong>Age:</strong> {result.age}
-              </p>
-              <p>
-                <strong>Birthday:</strong> {result.birthday}
-              </p>
+              <div className="result-field">
+                {result.phone && (
+                  <p>
+                    <strong>Phone:</strong> {result.phone}
+                  </p>
+                )}
+              </div>
+              <div className="result-field">
+                {result.email && (
+                  <p>
+                    <strong>Email:</strong> {result.email}
+                  </p>
+                )}
+              </div>
+              <div className="result-field">
+                {result.street && result.city && result.state && result.zip && (
+                  <p>
+                    <strong>Address:</strong> {result.street}, {result.city},{" "}
+                    {result.state} {result.zip}
+                  </p>
+                )}
+              </div>
+              <div className="result-field">
+                {result.age && (
+                  <p>
+                    <strong>Age:</strong> {result.age}
+                  </p>
+                )}
+              </div>
+              <div className="result-field">
+                {result.birthday && (
+                  <p>
+                    <strong>Birthday:</strong> {result.birthday}
+                  </p>
+                )}
+              </div>
             </div>
           ))}
         </div>

@@ -15,7 +15,7 @@ const Loading = ({ onLoadComplete }) => {
 
   return (
     <div className="loading-container">
-      {loading && <h1 className="loading-text">MNET</h1>}
+      {loading && <h1 className="loading-text">SNET</h1>}
     </div>
   );
 };

@@ -12,7 +12,7 @@ body {
   width: 100%;
   max-width: 600px;
   background-color: #1e1e1e;
-  border-radius: 12px;
+  border-radius: 7px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
   padding: 0.8rem;
   position: relative;
@@ -22,7 +22,7 @@ body {
 .form-title {
   text-align: center;
   color: #ffffff;
-  margin-bottom: 1.5rem;
+  margin-bottom: .2rem;
   font-size: 2.5rem; /* Increased font size for prominence */
   font-weight: 700;
   letter-spacing: 1px;
@@ -31,7 +31,7 @@ body {
 }
 
 .form-layout {
-  margin-top: 45px;
+  /* margin-top: 45px; */
   margin-bottom: 30px;
   display: flex;
   height: 100%; /* Adjusted height for better alignment */
@@ -69,52 +69,10 @@ body {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-.form-section {
-  flex-grow: 1;
-  padding: 0 1rem; /* Adjusted padding to reduce right offset */
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-
-/* .input-field {
-  width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  background-color: #2a2a2a;
-  color: #ffffff;
-  transition: all 0.3s ease;
-} */
-
-/* .input-field {
-  width: calc(100% - 1.2rem);
-  padding: 0.6rem;
-  margin-bottom: 0.8rem;
-  border: 1px solid #3a3a3a;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  background-color: #1a1a1a;
-  color: #ffffff;
-  transition: border-color 0.3s ease;
-} */
-/* 
-.input-field {
-  width: 100%;
-  padding: 0.8rem;
-  margin-bottom: 1rem;
-  border: none;
-  border-radius: 6px;
-  font-size: 1rem;
-  background-color: #2a2a2a;
-  color: #ffffff;
-  transition: all 0.3s ease;
-} */
-
+/* styles/Form.css */
 .input-field {
   width: 100%; /* Full width within the parent container */
+  height: 40px; /* Set a fixed height for consistency */
   padding: 0.8rem;
   margin-bottom: 1rem;
   border: none;
@@ -126,6 +84,16 @@ body {
   box-sizing: border-box; /* Ensures padding is included in width calculation */
 }
 
+/* Adjusted the form-section to ensure consistent height */
+.form-section {
+  flex-grow: 1;
+  padding: 0 1rem; /* Adjusted padding to reduce right offset */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /* padding-right: 1%; */
+ /* Set a minimum height for the section */
+}
 .input-field:focus {
   outline: none;
   background-color: #333333;

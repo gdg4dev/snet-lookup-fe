@@ -7,13 +7,12 @@ const Form = ({ onSubmit }) => {
     name: "",
     email: "",
     phone: "",
-    city: "",
-    state: "",
-    pincode: "",
+    place: "",
   });
 
   const handleSectionChange = (section) => {
     setActiveSection(section);
+    setFormData({ name: "", email: "", phone: "", place: "" });
   };
 
   const handleChange = (e) => {
@@ -32,7 +31,7 @@ const Form = ({ onSubmit }) => {
   return (
     <div className="form-container">
       <h2 className="form-title">
-        <span style={{ color: "#007bff" }}>MNET</span> Find
+        <span style={{ color: "#007bff" }}>SNET</span> LOOKUP
       </h2>
       <div className="form-layout">
         <div className="options">
@@ -52,6 +51,8 @@ const Form = ({ onSubmit }) => {
           <form onSubmit={handleSubmit}>
             {activeSection === "name" && (
               <>
+
+                <div className="inline-fields">
                 <input
                   type="text"
                   name="name"
@@ -61,20 +62,15 @@ const Form = ({ onSubmit }) => {
                   className="input-field"
                   autoFocus
                 />
-                <div className="inline-fields">
-                  {["city", "state", "pincode"].map((field) => (
-                    <input
-                      key={field}
-                      type="text"
-                      name={field}
-                      value={formData[field]}
-                      onChange={handleChange}
-                      placeholder={
-                        field.charAt(0).toUpperCase() + field.slice(1)
-                      }
-                      className="input-field"
-                    />
-                  ))}
+                                <input
+                  type="text"
+                  name="place"
+                  value={formData.place}
+                  onChange={handleChange}
+                  placeholder="place"
+                  className="input-field"
+                  autoFocus
+                />
                 </div>
               </>
             )}
