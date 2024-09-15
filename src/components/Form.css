@@ -1,0 +1,211 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #121212;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  padding: 0.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.form-title {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem; /* Increased font size for prominence */
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Arial Black', sans-serif; /* Bold font for emphasis */
+}
+
+.form-layout {
+  margin-top: 45px;
+  margin-bottom: 30px;
+  display: flex;
+  height: 100%; /* Adjusted height for better alignment */
+  align-items: flex-end;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 120px; /* Slightly increased width for better spacing */
+}
+
+.option-btn {
+  padding: 0.8rem 1.2rem;
+  border: none;
+  background-color: transparent;
+  color: #a0a0a0;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+  margin-right: 0.5rem;
+  margin-bottom: 0.1rem; /* Added margin for spacing */
+}
+
+.option-btn:hover {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.option-btn.active {
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.form-section {
+  flex-grow: 1;
+  padding: 0 1rem; /* Adjusted padding to reduce right offset */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* .input-field {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  transition: all 0.3s ease;
+} */
+
+/* .input-field {
+  width: calc(100% - 1.2rem);
+  padding: 0.6rem;
+  margin-bottom: 0.8rem;
+  border: 1px solid #3a3a3a;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  transition: border-color 0.3s ease;
+} */
+/* 
+.input-field {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  transition: all 0.3s ease;
+} */
+
+.input-field {
+  width: 100%; /* Full width within the parent container */
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  transition: all 0.3s ease;
+  box-sizing: border-box; /* Ensures padding is included in width calculation */
+}
+
+.input-field:focus {
+  outline: none;
+  background-color: #333333;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+.inline-fields {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.inline-fields .input-field {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #4a4a4a;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: auto;
+}
+
+.submit-btn:hover {
+  background-color: #5a5a5a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.response-section {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background-color: #2a2a2a;
+  border-radius: 6px;
+}
+
+.response-title {
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.response-data {
+  background-color: #333333;
+  padding: 1rem;
+  border-radius: 6px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9rem;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: #ffffff;
+}
+
+.error-message {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #ff6b6b;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-container, .input-field, .submit-btn {
+  animation: fadeIn 0.3s ease-out;
+}
